@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
+    background-color: ##FFD700;
     color: #333;
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
 .header {
     text-align: center;
     padding: 20px;
-    background-color: #800000;
+    background-color: #FFD700;
     color: white;
     border-radius: 10px 10px 0 0;
 }
