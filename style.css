@@ -1,50 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
     color: #333;
-    text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
+
 .container {
+    width: 80%;
     max-width: 900px;
     margin: auto;
+    padding: 20px;
     background: white;
-    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .header {
-    background: linear-gradient(135deg, #ff6b6b, #556270);
+    text-align: center;
     padding: 20px;
+    background-color: #800000;
     color: white;
     border-radius: 10px 10px 0 0;
 }
+
+.subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
 .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
+    border-radius: 0;
+    border: 4px solid #800000;
+}
+
+h1, h2 {
+    color: #800000;
+}
+
+section {
+    padding: 15px;
     margin-top: 10px;
 }
-h1, h2 {
-    color: #444;
+
+ul {
+    list-style-type: square;
 }
-section {
-    margin: 20px 0;
-    padding: 15px;
-    border-left: 5px solid #ff6b6b;
-    background: #fff3f3;
-}
-.flyers img {
+
+.flyer {
     width: 100%;
     max-width: 400px;
-    margin: 10px;
-    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
 }
+
 .contact {
-    background: #556270;
-    color: white;
+    text-align: center;
     padding: 15px;
+    background-color: #800000;
+    color: white;
     border-radius: 0 0 10px 10px;
 }
