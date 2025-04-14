@@ -7,8 +7,9 @@
   <title>Break Housing Anxiety - Kushal Bhandari</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <style>
-    /* Improved image sizing system */
+    /* Existing styles */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -61,7 +62,6 @@
       display: block;
     }
 
-    /* Text sizing adjustments */
     h1 {
       font-size: 2.2rem;
       margin-bottom: 15px;
@@ -77,11 +77,44 @@
       line-height: 1.6;
       margin-bottom: 15px;
     }
+
+    /* New styles */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .thank-you {
+      background-color: #f8f9fa;
+      padding: 40px 20px;
+      margin: 40px 0;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .thank-you h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .thank-you ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .thank-you li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header Section -->
     <header class="header">
       <div class="header-content">
         <h1>Dismantling Break Housing Anxiety</h1>
@@ -92,9 +125,7 @@
       </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-      <!-- Introduction Section -->
       <section class="intro">
         <h2>🌟 A Project Close to My Heart 🌟</h2>
         <p>
@@ -102,7 +133,6 @@
         </p>
       </section>
 
-      <!-- Video Section -->
       <section class="video-section">
         <h2>Project Video</h2>
         <iframe src="https://drive.google.com/file/d/1wFuPIWQazskV8kHW7pwElzwwa3rzgT_t/preview" 
@@ -114,7 +144,6 @@
         </iframe>
       </section>
 
-      <!-- Detailed Introduction -->
       <section class="introduction">
         <h2>Introduction</h2>
         <p>
@@ -122,7 +151,6 @@
         </p>
       </section>
 
-      <!-- Objective Section -->
       <section class="objective">
         <h2>Objective</h2>
         <p>
@@ -130,18 +158,16 @@
         </p>
       </section>
 
-      <!-- Key Challenges -->
       <section class="issues">
         <h2>Key Challenges</h2>
         <ul>
-          <li><strong>Financial Hardship:</strong> High travel costs and expensive housing fees.</li>
-          <li><strong>Logistical Barriers:</strong> Storage difficulties and travel restrictions.</li>
-          <li><strong>Safety Concerns:</strong> Unstable home environments and social isolation.</li>
-          <li><strong>Community & Food Access:</strong> Limited affordable meal options and lack of social connection.</li>
+          <li><strong>Financial Hardship:</strong> High travel costs and expensive housing fees</li>
+          <li><strong>Logistical Barriers:</strong> Storage difficulties and travel restrictions</li>
+          <li><strong>Safety Concerns:</strong> Unstable home environments and social isolation</li>
+          <li><strong>Community & Food Access:</strong> Limited affordable meal options and lack of social connection</li>
         </ul>
       </section>
 
-      <!-- Upcoming Events -->
       <section class="events">
         <h2>Here is the Plan</h2>
         <p>
@@ -152,7 +178,6 @@
         </p>
       </section>
 
-      <!-- Event Flyers -->
       <section class="flyers">
         <h2>Event Flyers</h2>
         <div class="flyer-container">
@@ -161,11 +186,12 @@
         </div>
       </section>
 
-      <!-- Outcome Section -->
       <section class="outcome">
         <h2>Outcome</h2>
         <p>
-          I successfully raised <strong>$13,000+</strong> toward the Student Emergency Fund.
+          I successfully raised <strong>$13,000+</strong> toward the Student Emergency Fund. 
+          <strong>This fund will provide crucial financial support to students while ensuring break housing anxiety 
+          is formally addressed at the institutional level through policy changes and dedicated resources.</strong>
         </p>
         <div class="outcome-image">
           <img src="Image.png" alt="Celebratory Outcome" class="outcome-pic">
@@ -183,14 +209,61 @@
         </div>
       </section>
 
+      <section class="thank-you">
+        <h2>🎉 Heartfelt Gratitude 🎉</h2>
+        <p>This project's success was made possible by the incredible support of:</p>
+        <ul>
+          <li>Springfield College Student Government</li>
+          <li>Office of Student Affairs</li>
+          <li>Diversity & Inclusion Committee</li>
+          <li>Generous Donors & Alumni</li>
+          <li>Dedicated Student Volunteers</li>
+        </ul>
+        <p>Your commitment to student wellbeing has created lasting change!</p>
+      </section>
     </main>
 
-    <!-- Contact Footer -->
     <footer class="contact">
       <h2>Contact</h2>
       <p>For more information, reach out to <strong>Kushal Bhandari</strong></p>
       <p>Email: <a href="mailto:kbhandari@springfieldcollege.edu">kbhandari@springfieldcollege.edu</a></p>
     </footer>
   </div>
+
+  <script>
+    // Confetti animation trigger
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const duration = 3000;
+          const defaults = { 
+            startVelocity: 30,
+            spread: 360,
+            ticks: 60,
+            zIndex: 0,
+            particleCount: 100,
+            origin: { y: 0.6 }
+          };
+
+          confetti({
+            ...defaults,
+            particleCount: 80,
+            scalar: 1.2,
+            colors: ['#FFD700', '#FF4500', '#4169E1']
+          });
+
+          confetti({
+            ...defaults,
+            particleCount: 50,
+            scalar: 2,
+            colors: ['#32CD32', '#FF69B4', '#9400D3']
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const outcomeSection = document.querySelector('.outcome');
+    observer.observe(outcomeSection);
+  </script>
 </body>
 </html>
